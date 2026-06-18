@@ -8,20 +8,19 @@
 
 }
 
-
 body {
 
     font-family: "Segoe UI", sans-serif;
 
-    height: 100vh;
+    min-height: 100vh;
 
     background:
 
         linear-gradient(
 
-            rgba(0, 0, 0, .75),
+            rgba(0,0,0,.75),
 
-            rgba(0, 0, 0, .75)
+            rgba(0,0,0,.75)
 
         ),
 
@@ -31,18 +30,17 @@ body {
 
     background-position: center;
 
+    background-attachment: fixed;
+
     color: white;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
 
     text-align: center;
 
-}
+    overflow-y: auto;
 
+    padding: 40px 20px;
+
+}
 
 .container {
 
@@ -50,19 +48,27 @@ body {
 
     max-width: 900px;
 
+    margin: auto;
+
+    padding-top: 40px;
+
+    padding-bottom: 40px;
+
 }
 
+/* LOGO */
 
 .logo h1 {
 
-    font-size: 65px;
+    font-size: clamp(35px, 8vw, 65px);
 
     margin-bottom: 20px;
 
     font-weight: bold;
 
-}
+    line-height: 1.2;
 
+}
 
 .logo span {
 
@@ -70,6 +76,7 @@ body {
 
 }
 
+/* COMING SOON */
 
 .coming-soon {
 
@@ -81,17 +88,21 @@ body {
 
     margin-bottom: 20px;
 
+    font-size: 18px;
+
 }
 
+/* SUBTITLE */
 
 h2 {
 
-    font-size: 40px;
+    font-size: clamp(28px, 5vw, 40px);
 
     margin-bottom: 25px;
 
 }
 
+/* DESCRIPTION */
 
 .description {
 
@@ -107,6 +118,7 @@ h2 {
 
 }
 
+/* COUNTDOWN */
 
 .countdown {
 
@@ -116,10 +128,11 @@ h2 {
 
     gap: 25px;
 
+    flex-wrap: wrap;
+
     margin-bottom: 40px;
 
 }
-
 
 .box {
 
@@ -127,11 +140,11 @@ h2 {
 
     height: 150px;
 
-    background: rgba(255, 255, 255, .08);
+    background: rgba(255,255,255,.08);
 
     backdrop-filter: blur(15px);
 
-    border: 1px solid rgba(255, 255, 255, .15);
+    border: 1px solid rgba(255,255,255,.15);
 
     border-radius: 20px;
 
@@ -143,8 +156,15 @@ h2 {
 
     align-items: center;
 
+    transition: .3s;
+
 }
 
+.box:hover {
+
+    transform: translateY(-8px);
+
+}
 
 .box span {
 
@@ -156,7 +176,6 @@ h2 {
 
 }
 
-
 .box p {
 
     margin-top: 10px;
@@ -164,7 +183,6 @@ h2 {
     font-size: 18px;
 
 }
-
 
 /* CONTACT BUTTON */
 
@@ -190,15 +208,15 @@ h2 {
 
 }
 
-
 .contact-btn:hover {
 
     transform: translateY(-5px);
 
-    box-shadow: 0 10px 30px rgba(212, 175, 55, .4);
+    box-shadow: 0 10px 30px rgba(212,175,55,.4);
 
 }
 
+/* EMAIL */
 
 .email {
 
@@ -210,42 +228,93 @@ h2 {
 
 }
 
-
 /* MOBILE */
 
-@media(max-width:768px) {
+@media(max-width:768px){
 
-    .logo h1 {
+    body{
 
-        font-size: 45px;
+        padding: 30px 15px;
 
-    }
-
-    h2 {
-
-        font-size: 28px;
+        background-attachment: scroll;
 
     }
 
-    .description {
+    .container{
 
         width: 100%;
 
-        font-size: 18px;
+        padding-top: 20px;
 
     }
 
-    .countdown {
+    .logo h1{
 
-        flex-wrap: wrap;
+        font-size: 42px;
 
     }
 
-    .box {
+    .coming-soon{
 
-        width: 120px;
+        font-size: 15px;
 
-        height: 120px;
+        letter-spacing: 3px;
+
+    }
+
+    h2{
+
+        font-size: 26px;
+
+    }
+
+    .description{
+
+        width: 100%;
+
+        font-size: 17px;
+
+        line-height: 1.6;
+
+    }
+
+    .countdown{
+
+        gap: 15px;
+
+    }
+
+    .box{
+
+        width: 110px;
+
+        height: 110px;
+
+    }
+
+    .box span{
+
+        font-size: 38px;
+
+    }
+
+    .box p{
+
+        font-size: 15px;
+
+    }
+
+    .contact-btn{
+
+        padding: 15px 30px;
+
+        font-size: 16px;
+
+    }
+
+    .email{
+
+        font-size: 16px;
 
     }
 
